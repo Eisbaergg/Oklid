@@ -1,0 +1,2 @@
+# Oklid
+Öklid Hesaplama

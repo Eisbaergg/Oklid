@@ -1,0 +1,28 @@
+import math
+
+def euclidean_distance(point1, point2):
+    """İki nokta arasındaki Öklid mesafesini hesaplar."""
+    return math.sqrt((point2[0] - point1[0])**2 + (point2[1] - point1[1])**2)
+
+def calculate_distances(points):
+    """Verilen noktalar listesindeki tüm nokta çiftleri arasındaki mesafeleri hesaplar."""
+    distances = []
+    for i in range(len(points)):
+        for j in range(i + 1, len(points)):
+            distance = euclidean_distance(points[i], points[j])
+            distances.append(distance)
+    return distances
+
+def main():
+    # 1. Noktaların Tanımlanması
+    points = [(1, 2), (4, 6), (7, 1), (2, 5)]
+
+    # 2. Mesafelerin Hesaplanması
+    distances = calculate_distances(points)
+
+    # 3. Minimum Mesafenin Bulunması
+    min_distance = min(distances)
+    print(f"Minimum Mesafe: {min_distance}")
+
+if __name__ == "__main__":
+    main()
